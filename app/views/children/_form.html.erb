@@ -1,0 +1,52 @@
+<%= form_with(model: child, local: true) do |form| %>
+  <% if child.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(child.errors.count, "error") %> prohibited this child from being saved:</h2>
+
+      <ul>
+      <% child.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :child_no %>
+    <%= form.number_field :child_no, id: :child_child_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :emp_no_id %>
+    <%= form.text_field :emp_no_id, id: :child_emp_no_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :child_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :child_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.number_field :gender, id: :child_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth_date %>
+    <%= form.date_select :birth_date, id: :child_birth_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relationship %>
+    <%= form.number_field :relationship, id: :child_relationship %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
