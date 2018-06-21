@@ -23,7 +23,11 @@ default: &default
 
 development:
   <<: *default
-  database: employee_data_development
+  host: testdb.he2.us
+  database: tylerm
+  username: helium-test
+  password: helium-test
+  pool: 5
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
